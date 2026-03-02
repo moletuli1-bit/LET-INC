@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letuli Tree Service and Garage Door Perfection</title>
+
+    <!--flatpickr-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <section class="hero-section">
+      <div class="hero-left">
+        <h1>Letuli Inc.</h1>
+        <p>Professional services you can trust</p>
+      </div>
+
+      <div class="hero-right">
+        <section class="service-selector">
+          <label for="service">Choose a service:</label>
+          <select id="service" name="service">
+            <option value="">-- Please choose an option --</option>
+            <option value="option1">Letuli Tree Services</option>
+            <option value="option2">Garage Door Perfection</option>
+          </select>
+        </section>
+
+        <!-- Survey for Letuli Tree Services -->
+        <section class="forms-section">
+          <form id="survey-option1" class="survey hidden">
+            <h3>Letuli Tree Service Quote</h3>
+
+            <div class="basic-info">
+              <!--Question 1-->
+              <div class="survey-input">
+                <label for="name1">Name:</label>
+                <input type="text" id="name1" name="name1" />
+              </div>
+
+              <!--Question 2-->
+              <div class="survey-input">
+                <label for="phone1">Phone:</label>
+                <input
+                  type="tel"
+                  id="phone1"
+                  placeholder="123-456-7890"
+                  maxlength="12"
+                  name="phone1"
+                />
+              </div>
+
+              <!--Question 3-->
+              <div class="survey-input">
+                <label for="email1">Email:</label>
+                <input type="email" id="email1" name="email1" />
+              </div>
+
+              <!--Question 4-->
+              <div class="survey-input">
+                <label for="zip1">ZIP:</label>
+                <input type="text" id="zip1" name="zip1" />
+              </div>
+
+              <!--Question 5-->
+              <div class="survey-input">
+                <label for="address1">Address:</label>
+                <input type="text" id="address1" name="address1" />
+              </div>
+            </div>
+
+            <!--Question 6-->
+            <div class="service-type-container">
+              <p>Type of Service:</p>
+              <div class="service-options">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="tree-service-type[]"
+                    value="Trimming"
+                  />
+                  <span>Trimming</span>
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="tree-service-type[]"
+                    value="Removal"
+                  />
+                  <span>Removal</span>
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="tree-service-type[]"
+                    value="Pruning"
+                  />
+                  <span>Pruning</span>
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="tree-service-type[]"
+                    value="Landscaping"
+                  />
+                  <span>Landscaping</span>
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="tree-service-type[]"
+                    value="Other"
+                  />
+                  <span>Other</span>
+                </label>
+              </div>
+            </div>
+
+            <div id="other-service-container" class="hidden">
+              <label for="other-service">If other, please specify:</label>
+              <input
+                type="text"
+                id="other-service"
+                name="other-service"
+                placeholder="Describe your service"
+              />
+            </div>
+
+            <!--Add date they want to pro to arrive + time of the days-->
+            <div class="calendar-container">
+              <label for="calendar"
+                >Which days would you like us to show up?</label
+              >
+              <input
+                type="text"
+                id="date-range"
+                class="calendar"
+                placeholder="Select date"
+                name="dates1"
+              />
+            </div>
+            <div class="calendar-container">
+              <label for="calendar"
+                >What time works best for us to visit you?</label
+              >
+              <input
+                type="text"
+                id="StartTime1"
+                class="time"
+                placeholder="Select Preferred Start time"
+                name="stime1"
+              />
+            </div>
+            <br />
+            <input
+              type="text"
+              id="EndTime1"
+              class="time"
+              placeholder="Select Preferred End time"
+              name="etime1"
+            />
+            <div class="submit-container">
+              <button type="submit" class="submit-btn">Submit</button>
+            </div>
+          </form>
+
+          <!-- Survey for Garage Door Perfection -->
+          <form id="survey-option2" class="survey hidden">
+            <h3>Garage Door Perfection Quote</h3>
+
+            <div class="basic-info">
+              <!--Question 1-->
+              <div class="survey-input">
+                <label for="name2">Name:</label>
+                <input type="text" id="name2" name="name2" />
+              </div>
+
+              <!--Question 2-->
+              <div class="survey-input">
+                <label for="phone2">Phone:</label>
+                <input
+                  type="tel"
+                  id="phone2"
+                  placeholder="123-456-7890"
+                  maxlength="12"
+                />
+              </div>
+
+              <!--Question 2-->
+              <div class="survey-input">
+                <label for="email2">Email:</label>
+                <input type="text" id="email2" name="email2" />
+              </div>
+
+              <!--Question 3-->
+              <div class="survey-input">
+                <label for="zip2">ZIP:</label>
+                <input type="text" id="zip2" name="zip2" />
+              </div>
+
+              <!--Question 4-->
+              <div class="survey-input">
+                <label for="address2">Address:</label>
+                <input type="text" id="address2" name="address2" />
+              </div>
+            </div>
+
+            <!--Question 5-->
+            <div class="service-type-container">
+              <p>Type of Service:</p>
+              <div class="service-options">
+                <label>
+                  <input type="radio" name="door-service-type" value="Repair" />
+                  <span>Repair</span>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="door-service-type"
+                    value="Replace"
+                  />
+                  <span>Replace</span>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="door-service-type"
+                    value="Install"
+                  />
+                  <span>Install</span>
+                </label>
+              </div>
+            </div>
+
+            <!--Question 6-->
+            <div class="service-type-container">
+              <p>Door Size:</p>
+              <div class="service-options">
+                <label>
+                  <input type="radio" name="door-size" value="Single" />
+                  <span>Single Car Door</span>
+                </label>
+                <label>
+                  <input type="radio" name="door-size" value="Double" />
+                  <span>Double Car Door</span>
+                </label>
+              </div>
+            </div>
+
+            <!--Question 7-->
+            <div class="service-type-container">
+              <p>What is your door primarily made of?</p>
+              <div class="service-options">
+                <label>
+                  <input type="radio" name="material" value="Aluminum" />
+                  <span>Aluminum (most common)</span>
+                </label>
+                <label>
+                  <input type="radio" name="material" value="Steel" />
+                  <span>Steel</span>
+                </label>
+                <label>
+                  <input type="radio" name="material" value="Vinyl" />
+                  <span>Vinyl</span>
+                </label>
+                <label>
+                  <input type="radio" name="material" value="Wood" />
+                  <span>Wood</span>
+                </label>
+                <label>
+                  <input type="radio" name="material" value="Unsure" />
+                  <span>I'm not sure</span>
+                </label>
+              </div>
+            </div>
+
+            <!--Question 8-->
+            <div class="service-type-container">
+              <p>How does the door open?</p>
+              <div class="service-options">
+                <label>
+                  <input type="radio" name="open-type" value="Tilt" />
+                  <span>One piece tilt-up</span>
+                </label>
+                <label>
+                  <input type="radio" name="open-type" value="Sectional" />
+                  <span>Sectional Role up</span>
+                </label>
+              </div>
+            </div>
+
+            <!--Add date they want to pro to arrive + time of the days-->
+            <div class="calendar-container">
+              <label for="calendar"
+                >What days would you like us to show up?</label
+              >
+              <input
+                type="text"
+                id="date-range"
+                class="calendar"
+                placeholder="Select date"
+                name="dates2"
+              />
+            </div>
+            <div class="calendar-container">
+              <label for="calendar"
+                >What time works best for us to visit you?</label
+              >
+              <input
+                type="text"
+                id="StartTime2"
+                class="time"
+                placeholder="Select Preferred Start time"
+                name="stime2"
+              />
+            </div>
+            <br />
+            <input
+              type="text"
+              id="EndTime2"
+              class="time"
+              placeholder="Select Preferred End time"
+              name="etime2"
+            />
+
+            <div class="submit-container">
+              <button type="submit" class="submit-btn">Submit</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section class="services-overview">
+      <div class="fade-in-left">
+        <h2>Our Services</h2>
+        <p>
+          We provide high-quality services tailored to Garage Doors and Tree
+          Services
+        </p>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <footer>
+      <p>© 2026 Letuli Inc</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

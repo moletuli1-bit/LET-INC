@@ -1,0 +1,297 @@
+/* adds dark overlay on the image */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* black at 50% opacity */
+  z-index: 1;
+}
+
+/* first thing you see on the website: LETULI INC. + company mission/philosophy + image itself */
+.hero-section{
+  min-height : 100vh;
+  background-image : url(../images/zack-masters-C-g9MSA8dZ8-unsplash.jpg);
+  background-size : cover;
+  background-position : center;
+  background-attachment : fixed;
+  display : flex;
+  flex-direction : row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  color : white;
+  text-align : left;
+  position : relative;
+}
+.hero-left {
+  flex: 1;
+  padding: 2rem;
+  max-width: 50%;
+  z-index: 2;
+}
+.hero-right {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto; /* adds scrolling if forms are too long */
+  max-height: 80vh; /* limits height so it fits on the screen */
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.353);
+}
+.hero-section h1{
+  font-size : 100px;
+  margin : 25px;
+  margin-left: 10px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+.hero-section p{
+  font-size : 25px;
+  margin : 15px;
+  font-weight: 100;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  position : relative;
+}
+
+/* right below the main content you see, explains overview of company */
+.services-overview {
+  padding : 4rem;
+  background-color : rgb(12, 69, 50);
+  text-align : left;
+  color : white;
+}
+.services-overview h2{
+  font-size : 50px;
+  margin : 10px;
+  margin-left : 1px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.services-overview p{
+  font-size : 20px;
+  font-weight: light;
+}
+/* Initial state - hidden and moved to the left */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+/* Active state - visible and in position */
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+/****************************PARALLAX********************************/
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.content {
+    flex: 1;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+main {
+  padding: 2rem;
+}
+
+footer {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 0.5rem 1rem; /* smaller vertical padding, same horizontal */
+  font-size: 0.9rem; /* optional: make text slightly smaller */
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+select {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers horizontally */
+  gap: 0.25rem
+}
+
+.hidden {
+  display: none;
+}
+
+/* Centers the entire survey box */
+.survey-container {
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  margin-top: 2rem;
+}
+
+/* Keeps labels aligned nicely */
+.survey {
+  text-align: center; /* keeps labels aligned to left inside the box */
+}
+
+.basic-info {
+  margin-left: -80px;
+}
+
+.survey-input {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centers the whole row */
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.survey-input label {
+  width: 80px;        /* labels align together */
+  text-align: right; /* label text aligns neatly */
+}
+
+.survey-input input {
+  width: 100%;      /* inputs align together */
+  padding: 0.5rem;
+}
+
+/* Optional: nice spacing for each row */
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  width: 80px;       /* fixed width for label alignment */
+  margin-right: 1rem; /* space between label and input */
+}
+
+.form-group input {
+  width: 300px;      /* controls input box size */
+  padding: 0.5rem;
+}
+
+.service-type-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/****************************FORMATING********************************/
+
+.service-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.service-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* hide default radio button */
+.service-options input[type="radio"],
+.service-options input[type="checkbox"] {
+  display: none;
+}
+
+/* draw the empty circle */
+.service-options span::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+/* fill the circle when selected */
+.service-options input:checked + span::before {
+  background-color: #333;
+}
+
+#other-service-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#other-service-container input {
+  width: 300px;
+  padding: 0.5rem;
+}
+
+/****************************MULT CHOICE OPTIONS********************************/
+
+.calendar, .time {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 250px;
+}
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.submit-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/****************************CALENDAR********************************/
+
+.submit-btn {
+  background-color: #007bff; /* blue */
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/****************************SUBMIT BUTTON********************************/

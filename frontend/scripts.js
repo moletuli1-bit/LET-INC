@@ -6,10 +6,12 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log("Submit listener fired!");
 });
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 const select = document.getElementById("service");
 const survey1 = document.getElementById("survey-option1");
 const survey2 = document.getElementById("survey-option2");
 const body = document.body;
+
 select.addEventListener("change", () => {
   // Hide both surveys first
   survey1.classList.add("hidden");
@@ -74,6 +76,20 @@ document
     window.location.reload();
   });
 
+// Pre-render forms to eliminate first-click lag
+window.addEventListener('load', () => {
+  survey1.classList.remove('hidden');
+  survey2.classList.remove('hidden');
+  
+  // Force browser to calculate layout
+  setTimeout(() => {
+    survey1.classList.add('hidden');
+    survey2.classList.add('hidden');
+  }, 5);
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 const serviceTypeRadios = document.querySelectorAll(
   'input[name="service-type"]',
 );
@@ -88,6 +104,8 @@ serviceTypeRadios.forEach((radio) => {
     }
   });
 });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //flatpickr
 flatpickr("#date-range", {
@@ -118,6 +136,8 @@ phoneInput.addEventListener("input", () => {
 
   phoneInput.value = formatted;
 });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Intersection Observer for scroll animations.
 // creating object (like dictionaries in python) that sets 

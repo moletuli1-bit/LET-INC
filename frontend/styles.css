@@ -14,6 +14,7 @@
 .hero-section{
   min-height : 100vh;
   background-image : url(../images/zack-masters-C-g9MSA8dZ8-unsplash.jpg);
+  transition: background-image 0.5s ease;
   background-size : cover;
   background-position : center;
   background-attachment : fixed;
@@ -25,6 +26,9 @@
   color : white;
   text-align : left;
   position : relative;
+}
+body.garage-door-theme .hero-section{
+  background-image: url(../images/todd-kent-onnJOfF-okU-unsplash.jpg);
 }
 .hero-left {
   flex: 1;
@@ -147,6 +151,7 @@ select {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
+  visibility: hidden;
   transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
@@ -162,6 +167,7 @@ select {
   max-height: 1500px;  /* Big enough to fit your form */
   opacity: 1;
   overflow: hidden;
+  visibility: visible;
   transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 

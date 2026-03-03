@@ -13,7 +13,7 @@
 /* first thing you see on the website: LETULI INC. + company mission/philosophy + image itself */
 .hero-section{
   min-height : 100vh;
-  background-image : url(../images/zack-masters-C-g9MSA8dZ8-unsplash.jpg);
+  background-image : url(../images/IMG_20260303_141631.jpg);
   transition: background-image 0.5s ease;
   background-size : cover;
   background-position : center;
@@ -27,9 +27,7 @@
   text-align : left;
   position : relative;
 }
-body.garage-door-theme .hero-section{
-  background-image: url(../images/todd-kent-onnJOfF-okU-unsplash.jpg);
-}
+
 .hero-left {
   flex: 1;
   padding: 2rem;
@@ -42,7 +40,7 @@ body.garage-door-theme .hero-section{
   overflow-y: auto; /* adds scrolling if forms are too long */
   max-height: 80vh; /* limits height so it fits on the screen */
   z-index: 2;
-  background-color: rgba(16, 112, 80, 0.603);
+  background-color: #113626a2;
   max-width: 50%;
   overflow-x: hidden;
 }
@@ -65,7 +63,7 @@ body.garage-door-theme .hero-section{
 /* right below the main content you see, explains overview of company */
 .services-overview {
   padding : 4rem;
-  background-color : rgb(12, 69, 50);
+  background-color : #163611;
   text-align : left;
   color : white;
 }
@@ -74,7 +72,7 @@ body.garage-door-theme .hero-section{
   margin : 10px;
   margin-left : 1px;
   font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 .services-overview p{
   font-size : 20px;
@@ -92,13 +90,36 @@ body.garage-door-theme .hero-section{
   transform: translateX(0);
 }
 /****************************PARALLAX********************************/
-h3 {
-  text-align: center;
-  color: burlywood;
+
+body.garage-door-theme .hero-section{
+  background-image: url(../images/todd-kent-onnJOfF-okU-unsplash.jpg);
 }
 
-.service-type-container p {
-  color: burlywood;
+body.garage-door-theme .services-overview{
+  background-color: #3a3a3a;
+}
+
+body.garage-door-theme .hero-right {
+  background-color: #4f4f4f9a;
+}
+
+/****************************Garage-Door Theme********************************/
+
+body.tree-service-theme .hero-section{
+  background-image: url(../images/zack-masters-C-g9MSA8dZ8-unsplash.jpg);
+}
+
+body.tree-service-theme .services-overview{
+  background-color: rgb(12, 69, 50);
+}
+
+body.tree-service-theme .hero-right {
+  background-color: rgba(16, 112, 80, 0.603);
+}
+
+/****************************Tree-Service Theme********************************/
+h3 {
+  text-align: center;
 }
 
 body {
@@ -245,7 +266,6 @@ select {
   border-radius: 5px;
   cursor: pointer;
   user-select: none;
-  color: burlywood;
 }
 
 /* hide default radio button */
@@ -283,10 +303,6 @@ select {
 #other-service-container input {
   width: 300px;
   padding: 0.5rem;
-}
-
-#other-service-container label {
-  color: burlywood;
 }
 
 /****************************MULT CHOICE OPTIONS********************************/

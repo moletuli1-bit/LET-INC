@@ -1,24 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const nodemailer = require("nodemailer");
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-// Email configuration
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 587,                    
-  secure: false,                
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  },
-  tls: {
-    rejectUnauthorized: false
-  }
-});
 
 // Middleware
 app.use(cors());
@@ -47,16 +35,16 @@ app.post("/submit", async (req, res) => {
     subject = "New Form Submission - Letuli Inc";
   }
 
-  const mailOptions = {
-    from: "letuliincc@gmail.com",
-    to: "letuliincc@gmail.com",
-    subject: subject, // Use the dynamic subject
-    text: `New form submission:\n\n${emailContent}`,
+  const msg = {
+    to: 'letuliincc@gmail.com',
+    from: 'letuliincc@gmail.com', // Must match your verified sender
+    subject: subject,
+    text: `New form submission:\n\n${emailContent}`
   };
 
   // Send email
   try {
-    await transporter.sendMail(mailOptions);
+    await sgMail.send(msg);
     console.log("Email sent successfully!");
 
     res.json({

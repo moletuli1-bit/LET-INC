@@ -48,7 +48,7 @@ document
       }
     }
 
-    const response = await fetch("http://localhost:3000/submit", {
+    const response = await fetch("/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -65,7 +65,7 @@ document
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
-    const response = await fetch("http://localhost:3000/submit", {
+    const response = await fetch("/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

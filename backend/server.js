@@ -36,7 +36,7 @@ app.post("/submit", async (req, res) => {
   }
 
   const msg = {
-    to: 'letuliincc@gmail.com',
+    to: 'letuliinc@outlook.com',
     from: 'letuliincc@gmail.com', // Must match your verified sender
     subject: subject,
     text: `New form submission:\n\n${emailContent}`

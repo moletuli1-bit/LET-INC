@@ -92,6 +92,8 @@ html {
 }
 .hero-right {
   flex: 1;
+  position: relative;
+  right: 20px;
   padding: 4rem;
   overflow-y: auto; /* adds scrolling if forms are too long */
   max-height: 55vh; /* limits height so it fits on the screen */
@@ -336,12 +338,13 @@ select {
 }
 
 .survey-input label {
-  width: 80px;        /* labels align together */
+  width: 70%;
+  max-width: 80px;        /* labels align together */
   text-align: right; /* label text aligns neatly */
 }
 
 .survey-input input {
-  width: 100%;      /* inputs align together */
+  width: 30%;      /* inputs align together */
   max-width: 400px;
   padding: 0.5rem;
 }
@@ -438,27 +441,24 @@ select {
 
 /****************************MULT CHOICE OPTIONS********************************/
 
-.calendar, .time {
-  padding: 0.5rem;
-  font-size: 1rem;
-  width: 250px;
+@media (max-width: 768px) {
+  .hero-section{
+    flex-direction: column;
+  }
+
+  .hero-left {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+
+  .hero-right {
+    max-width: 100%;
+    padding: 1rem;
+    
+  }
 }
 
-.calendar-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.submit-container {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-/****************************CALENDAR********************************/
+/****************************MEDIA WRAPPING********************************/
 
 .submit-btn {
   background-color: #007bff; /* blue */
